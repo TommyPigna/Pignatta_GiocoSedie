@@ -6,6 +6,7 @@
 /**
  * Classe che visualizza lo stato delle sedie.
  * Estende {@link Thread} per aggiornare continuamente lo stato.
+ * 
  * @author tommaso pignatta
  */
 class Display extends Thread
