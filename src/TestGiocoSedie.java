@@ -27,9 +27,6 @@ public class TestGiocoSedie {
     public static void main(String[] args) {
         // Creazione dell'array di sedie
         Posto sedie[] = new Posto[NUMSEDIE];
-        Scrittore s = new Scrittore("Risultato.txt");
-        //Thread t = new Thread(s);
-        //t.start();
         
 
 	for (int k = 0; k < sedie.length; k++)
@@ -46,7 +43,6 @@ public class TestGiocoSedie {
                 //System.out.println("Sto facendo partire il thread n." + array[i].getId());
                 logger.info("Sto facendo partire il thread id: " + array[i].getId()+" name: "+array[i].getId()+"\n");
                 array[i].start();
-                //s.scrivi(array[i].getId(), array[i]. );
                 }
 	}
     }

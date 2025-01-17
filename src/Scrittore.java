@@ -32,15 +32,15 @@ public class Scrittore{
      * @param id
      * @param posto
      */
-    public void scrivi(int id, int posto){
+    public synchronized void scrivi(long id, int posto){
         BufferedWriter br=null;
         
         try {
             //1) apro il file
             br = new BufferedWriter(
-                    new FileWriter(nomeFile));
+                    new FileWriter(nomeFile, true));
             //2) scrivo nel buffer
-            br.write("Il thread "+id+" occupa il posto "+posto+" .");
+            br.write("Il Thread "+id+" occupa il posto "+posto+".");
             br.write("\n\r");
             //3) svuoto il buffer e salvo nel file i dati
             br.flush();         

@@ -35,7 +35,8 @@ class Partecipante extends Thread
          */
 
 	public void run() {
-
+            Scrittore s = new Scrittore("Risultato.txt");
+            
 		try {
 			sleep((int) (Math.random() * 1000));
                         // Tenta di occupare una sedia
@@ -43,7 +44,9 @@ class Partecipante extends Thread
 				if (sedie[i].occupa()) {
 					System.out.println("Sono il Thread " + this.getName()
 							+ ". Sono riuscito a sedermi sul posto " + i);
-					return;
+					s.scrivi(this.getId(), i);
+                                        return;
+                                        
 				}
 			}
                         // Nessuna sedia disponibile
